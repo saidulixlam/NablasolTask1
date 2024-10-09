@@ -116,7 +116,7 @@ const Step1 = ({ nextStep, prevStep }) => {
             <button
               type="button"
               onClick={() => setIsAddingNewClient(!isAddingNewClient)}
-              className="bg-transparent text-dark border border-gray-300 p-2 lg:p-2 rounded h-10 text-sm md:text-base hover:text-white hover:bg-gray-600 whitespace-nowrap min-w-[150px]"
+              className="bg-transparent text-dark border border-gray-300 p-2 lg:p-2 rounded h-10 text-sm md:text-base hover:text-white hover:bg-gray-600 whitespace-nowrap min-w-[132px]"
             >
               {isAddingNewClient ? 'Cancel' : '+ New Client'}
             </button>
@@ -195,7 +195,7 @@ const Step1 = ({ nextStep, prevStep }) => {
 
         <div className="flex items-center justify-between mt-6 relative">
           <button className="flex items-center text-gray-700 px-4 py-2 rounded" onClick={prevStep}>
-            <MdArrowBackIos className="mr-2" /> {/* Margin-right to space the icon from the text */}
+            <MdArrowBackIos className="mr-2" />
             Back
           </button>
 
