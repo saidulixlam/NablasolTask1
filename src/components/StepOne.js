@@ -116,10 +116,11 @@ const Step1 = ({ nextStep, prevStep }) => {
             <button
               type="button"
               onClick={() => setIsAddingNewClient(!isAddingNewClient)}
-              className="bg-transparent text-dark border border-gray-300 p-2 lg:p-2 rounded h-10 text-sm md:text-base hover:text-white hover:bg-gray-600"
+              className="bg-transparent text-dark border border-gray-300 p-2 lg:p-2 rounded h-10 text-sm md:text-base hover:text-white hover:bg-gray-600 whitespace-nowrap min-w-[150px]"
             >
               {isAddingNewClient ? 'Cancel' : '+ New Client'}
             </button>
+
           </div>
 
           {isAddingNewClient && (
