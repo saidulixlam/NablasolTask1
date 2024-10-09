@@ -29,10 +29,9 @@ const App = () => {
       const updatedProjects = [...storedProjects, newProject];
 
       localStorage.setItem('projects', JSON.stringify(updatedProjects));
-      localStorage.removeItem('formData'); // Clear form data once saved
-      console.log('Project saved:', newProject);
+      localStorage.removeItem('formData');
       
-      setIsModalOpen(true); // Open the success modal after saving the project
+      setIsModalOpen(true); 
     } else {
       setCurrentStep((prevStep) => Math.min(prevStep + 1, 6));
     }
@@ -43,18 +42,18 @@ const App = () => {
   };
 
   const handleViewProject = () => {
-    setShowProjectDetails(true); // Show project details
-    setIsModalOpen(false); // Close the modal
+    setShowProjectDetails(true); 
+    setIsModalOpen(false);
   };
 
   const handleBackToSteps = () => {
-    setShowProjectDetails(false); // Hide project details
-    setCurrentStep(1); // Reset the current step to 1
+    setShowProjectDetails(false); 
+    setCurrentStep(1); 
   };
 
   const renderStep = () => {
     if (showProjectDetails) {
-      return <ProjectDetails onBack={handleBackToSteps} />; // Render ProjectDetails if requested
+      return <ProjectDetails onBack={handleBackToSteps} />; 
     }
 
     switch (currentStep) {
@@ -87,10 +86,8 @@ const App = () => {
           </button>
           
           <div className="w-full flex-1 bg-white rounded-md p-4">
-            {renderStep()} {/* Render step or project details based on state */}
+            {renderStep()} 
           </div>
-
-          {/* Only render progress dots when project details are not displayed */}
           {!showProjectDetails && (
             <div className="w-full flex justify-center my-4">
               {[...Array(6)].map((_, index) => (

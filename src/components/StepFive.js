@@ -58,7 +58,6 @@ const StepFive = ({ prevStep, nextStep }) => {
         const existingData = JSON.parse(localStorage.getItem('formData')) || {};
         const allSelectedTasks = [...selectedTasks, ...customTasks];
         localStorage.setItem('formData', JSON.stringify({ ...existingData, tasks: allSelectedTasks }));
-        console.log("Submitted tasks:", allSelectedTasks);
         nextStep();
     };
 

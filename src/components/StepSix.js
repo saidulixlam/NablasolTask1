@@ -58,7 +58,6 @@ const StepSix = ({ prevStep, nextStep }) => {
     const existingData = JSON.parse(localStorage.getItem('formData')) || {};
     const allSelectedMembers = [...selectedMembers, ...customMembers];
     localStorage.setItem('formData', JSON.stringify({ ...existingData, teamMembers: allSelectedMembers }));
-    console.log("Submitted team members:", allSelectedMembers);
     nextStep();
   };
 

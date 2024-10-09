@@ -43,7 +43,6 @@ const Step1 = ({ nextStep, prevStep }) => {
   };
 
   const handleSubmit = (e) => {
-    console.log(formData);
 
     e.preventDefault();
     const newErrors = {};
@@ -99,11 +98,11 @@ const Step1 = ({ nextStep, prevStep }) => {
         <div className="flex flex-col w-full">
           <label className="block text-gray-700 mb-2 font-semibold">Client</label>
 
-          <div className="flex items-center justify-between w-full">
+          <div className="flex items-center gap-2 w-full">
             <select
               value={formData.clientName}
               onChange={handleChange('clientName')}
-              className={`border-2 rounded-md w-3/5 ${errors.clientName ? 'border-red-500' : 'border-gray-300'} h-10 text-gray-500 focus:outline-none focus:border-blue-600`}
+              className={`border-2 rounded-md w-1/2 ${errors.clientName ? 'border-red-500' : 'border-gray-300'} h-10 text-gray-500 focus:outline-none focus:border-blue-600`}
             >
               <option value="" disabled hidden>Select a client</option>
               <option value="Birla">Birla</option>
@@ -112,12 +111,12 @@ const Step1 = ({ nextStep, prevStep }) => {
               ))}
             </select>
 
-            <span className="mx-2">Or</span>
+            <span className="mx-1">Or</span>
 
             <button
               type="button"
               onClick={() => setIsAddingNewClient(!isAddingNewClient)}
-              className="bg-transparent text-dark border border-gray-300 p-1 lg:p-2 rounded h-10 text-sm md:text-base hover:text-white hover:bg-gray-600"
+              className="bg-transparent text-dark border border-gray-300 p-2 lg:p-2 rounded h-10 text-sm md:text-base hover:text-white hover:bg-gray-600"
             >
               {isAddingNewClient ? 'Cancel' : '+ New Client'}
             </button>
@@ -155,14 +154,14 @@ const Step1 = ({ nextStep, prevStep }) => {
           <div className="flex items-center space-x-4">
             <input
               type="date"
-              value={formData.fromDate}
+              value={formData.fromDate || '2024-01-01'}
               onChange={handleChange('fromDate')}
               className="border-2 rounded-md p-2 w-1/2 border-gray-300 focus:outline-none focus:border-blue-600"
             />
 
             <input
               type="date"
-              value={formData.toDate}
+              value={formData.toDate || '2024-01-01'}
               onChange={handleChange('toDate')}
               min={calculateMinToDate()}
               className="border-2 rounded-md p-2 w-1/2 border-gray-300 focus:outline-none focus:border-blue-600"
